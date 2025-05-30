@@ -1,0 +1,834 @@
+body {
+  cursor: url("images/mouse.png") 0 0, auto;
+  background-color: #3867d6;
+  margin: 0;
+  padding: 0;
+}
+
+#canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 9999;
+  pointer-events: none;
+}
+
+/*Police*/
+.perso-class,
+.title,
+.perso-title,
+.title-form {
+  font-family: "Lexend Mega", sans-serif;
+}
+
+p {
+  font-family: "Comfortaa", sans-serif;
+  font-size: 20px;
+}
+
+/* Barre de navigation */
+.custom-navbar {
+  height: 80px;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 2; /* Doit être supérieur à l'effet 3D */
+}
+
+.custom-logo {
+  width: 60px;
+  height: 60px;
+  transform: rotate(360deg);
+  transition: transform 1s ease;
+  margin-left: 10px;
+}
+
+.custom-logo:hover {
+  transform: rotate(0deg);
+}
+
+/* Logo burger (masqué sur grand écran) */
+.burger-menu {
+  display: none; /* Caché par défaut */
+}
+/* Style pour la barre de navigation latérale */
+.side-nav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  top: 0;
+  right: 0;
+  background-color: rgba(56, 103, 214, 0.95);
+  overflow-x: hidden;
+  transition: 0.5s;
+  z-index: 9999;
+}
+
+.side-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 50px 0 0 20px;
+}
+
+.side-nav ul li {
+  margin: 20px 0;
+}
+
+.side-nav ul li a {
+  color: white;
+  font-size: 24px;
+  text-decoration: none;
+  font-family: "Arial", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.side-nav ul li a:hover {
+  color: #ffd700;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 25px;
+  font-size: 36px;
+  text-decoration: none;
+  color: white;
+  cursor: pointer;
+}
+
+/* Ouverture de la barre */
+.side-nav.open {
+  width: 250px;
+}
+.perso-class {
+  font-size: 18px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  transition: color 0.3s ease;
+}
+
+.text-gold,
+.perso-subtitle {
+  color: #ffd700;
+}
+
+.text-white {
+  color: white;
+}
+.Introduction {
+  position: relative;
+}
+.perso-content {
+  position: relative;
+  margin-top: 250px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  text-align: center;
+}
+
+.perso-title {
+  font-family: "Squada One", sans-serif;
+  font-size: 70px;
+  z-index: 2;
+  letter-spacing: 4px;
+  margin: 0;
+  color: white;
+  text-shadow: 5px 5px 30px rgba(0, 0, 0, 0.9),
+    10px 10px 40px rgba(0, 0, 0, 0.7), 0 0 15px rgba(255, 255, 255, 0.5);
+}
+
+.perso-subtitle {
+  font-size: 24px;
+  margin-top: 20px;
+}
+
+.perso-content::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.3) 0%,
+    transparent 70%
+  );
+  filter: blur(10px);
+  animation: pulse 2s infinite;
+  z-index: 0;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+  50% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+}
+
+/*............................formulaire administrateur......................................*/
+
+.login-form {
+  display: none;
+  position: absolute;
+  background-color: white;
+  color: white;
+  top: 10px;
+  right: 80px;
+  z-index: 100;
+}
+
+.close-btn {
+  background-color: transparent;
+  border: none;
+  color: black;
+  font-size: 18px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+}
+
+.close-btn:hover {
+  color: red;
+}
+/*.................Effet de brillance.............*/
+.content1,
+.profile-picture,
+.contact-box {
+  transition: box-shadow 1s;
+}
+
+.content1:hover,
+.profile-picture:hover,
+.contact-box:hover {
+  box-shadow: 0 0 100px rgba(241, 196, 15, 0.7);
+}
+/*.......................................*/
+.Introduction,
+.Main,
+.technologies,
+.Contact {
+  background: linear-gradient(
+    to bottom,
+    rgba(56, 103, 214, 1),
+    rgba(85, 58, 223, 0.8),
+    rgba(56, 103, 214, 1)
+  );
+}
+
+.content1 {
+  border-radius: 5px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  border-top: 10px solid #f1c40f;
+  border-left: 20px solid #f1c40f;
+}
+
+.title {
+  font-size: 32px;
+  color: #f1c40f;
+}
+/*effet au survol de la souris pour le text*/
+
+.text {
+  color: white;
+  transition: transform 1s;
+}
+
+.text:hover {
+  transform: perspective(1000px) rotateY(10deg);
+}
+/*.........................................*/
+
+.title,
+.text,
+.title-form {
+  margin-top: 30px;
+}
+
+.logo-container {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+.logo {
+  width: fit-content;
+  height: 600px;
+  transition: transform 5s ease; /* Animation de transition */
+}
+
+.logo-container:hover .logo {
+  transform: rotateY(360deg); /* Rotation complète sur l'axe Y au survol */
+}
+
+/*Présentation*/
+
+.profile-picture {
+  border-radius: 50%;
+  width: 250px;
+}
+
+.logo-container2 {
+  border-bottom: 10px solid #f1c40f;
+  border-right: 20px solid #f1c40f;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  padding: 100px;
+}
+
+/* Technologies */
+.technologies {
+  padding: 60px 0;
+  text-align: center;
+}
+
+.tech-icons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.tech-icons img {
+  width: 80px;
+  height: 80px;
+  margin: 10px;
+  transition: transform 0.3s;
+}
+
+.tech-icons img:hover {
+  transform: scale(1.1);
+}
+
+/*Page Contact*/
+.title-form {
+  font-size: 32px;
+  color: #f1c40f;
+  margin-bottom: 50px;
+}
+
+.Contact {
+  margin-top: 200px;
+  text-align: center;
+  padding: 40px 0;
+  min-height: 100vh;
+}
+
+.contact-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 5px solid #f1c40f;
+  border-radius: 5px;
+  padding: 20px;
+}
+
+.contact-right {
+  width: 60%;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+form input,
+form textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+/*...........message de confirmation........*/
+#confirmation {
+  color: white;
+  font-size: 20px;
+}
+
+label {
+  color: #f1c40f;
+}
+
+.send-button {
+  width: 200px;
+  height: 60px;
+  margin: 10px;
+  background-color: #f1c40f; /* Couleur de base */
+  border: none;
+  border-radius: 10px; /* Coins plus arrondis */
+  color: #fff;
+  cursor: pointer;
+  position: relative; /* Nécessaire pour l'effet */
+  overflow: hidden; /* Évite que l'ombre déborde */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transition fluide */
+}
+
+.send-button::before,
+.download-button::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300%;
+  height: 300%;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  transition: transform 0.4s ease;
+  z-index: 0; /* Positionné derrière le texte */
+  transform: translate(-50%, -50%) scale(0); /* Initialement invisible */
+}
+
+.send-button:hover::before,
+.download-button:hover::before {
+  transform: translate(-50%, -50%) scale(1); /* Apparition au survol */
+}
+
+.send-button:hover,
+.download-button:hover {
+  transform: scale(1.05); /* Légère augmentation de taille au survol */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* Ombre portée plus forte */
+}
+/* Footer Styling */
+.footer {
+  background: linear-gradient(
+    to bottom,
+    rgba(56, 103, 214, 1),
+    rgba(85, 58, 223, 0.8)
+  );
+  color: white;
+  padding: 40px 0;
+  position: relative;
+  z-index: 1;
+  font-family: "Open Sans", sans-serif;
+}
+
+.footer h3 {
+  color: #f1c40f;
+  margin-bottom: 15px;
+}
+
+.footer p {
+  color: #bbb;
+  font-size: 16px;
+}
+
+.footer a {
+  color: #f1c40f;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+/* Section sur moi */
+.footer-about p {
+  max-width: 350px;
+  margin-bottom: 20px;
+}
+
+/* Réseaux sociaux */
+.footer-social .social-icon {
+  display: inline-block;
+  margin: 10px;
+}
+
+.footer-social img {
+  width: 40px;
+  height: 40px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 50%;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+}
+
+.footer-social img:hover {
+  transform: scale(1.2) translateY(-10px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.9);
+}
+
+/* Contact rapide */
+.footer-contact {
+  text-align: right;
+}
+
+.footer-contact p {
+  margin-bottom: 10px;
+}
+
+/* Footer bottom */
+.footer-bottom {
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.footer-bottom p {
+  color: #aaa;
+  margin: 0;
+  font-size: 14px;
+}
+
+.footer-bottom p a {
+  color: #f1c40f;
+}
+
+.footer-bottom p a:hover {
+  color: #fff;
+}
+
+/* Animation d'apparition en fondu */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.footer-content {
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+/* Section À propos */
+
+.background {
+  position: fixed; /* Changer en fixed pour que le background soit fixé à la page entière */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, #3867d6, #553adf);
+  animation: gradientAnimation 10s ease-in-out infinite;
+  background-size: 200% 200%;
+  z-index: -5; /* Pour s'assurer qu'il reste derrière le contenu */
+}
+
+/* Animation for the gradient */
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.a-propos-section {
+  padding: 100px 0;
+  text-align: center;
+  color: white;
+  min-height: 100vh;
+}
+
+.a-propos-title {
+  margin-top: 100px;
+  font-family: "Squada One", sans-serif;
+  font-size: 70px;
+  letter-spacing: 3px;
+  text-shadow: 5px 5px 30px rgba(0, 0, 0, 0.8);
+}
+
+.a-propos-description {
+  font-family: "Comfortaa", sans-serif;
+  font-size: 28px;
+  line-height: 1.8;
+  margin-top: 20px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.futuristic-link {
+  display: inline-block;
+  margin-top: 30px;
+  padding: 15px 30px;
+  background-color: #ffd700;
+  color: #000;
+  font-size: 18px;
+  font-family: "Lexend Mega", sans-serif;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 50px;
+  transition: all 0.4s ease;
+  box-shadow: 0 0 30px rgba(255, 215, 0, 0.6);
+}
+
+.futuristic-link:hover {
+  background-color: #000;
+  color: #ffd700;
+  box-shadow: 0 0 50px rgba(255, 215, 0, 1);
+}
+
+/*Format mobile*/
+
+@media (max-width: 768px) {
+  body {
+    cursor: url("images/mouse_mobile.png"), auto;
+
+    /* Masquer la barre de navigation classique */
+  }
+  .custom-link {
+    display: none;
+  }
+
+  /* Afficher le logo burger */
+  .burger-menu {
+    display: block; /* Le logo burger s'affiche sur mobile */
+    position: absolute;
+    right: 5px;
+    top: 10px;
+    z-index: 10;
+  }
+  .burger-menu img {
+    height: 60px;
+    width: auto;
+    margin: 0;
+  }
+  /* Style de la barre latérale visible sur mobile */
+  .side-nav {
+    display: block;
+  }
+
+  .side-nav ul {
+    padding: 50px 20px;
+  }
+
+  .side-nav ul li {
+    margin: 20px 0;
+  }
+
+  .side-nav ul li a {
+    font-size: 24px;
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+
+  /* Bouton de fermeture */
+  .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 36px;
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+  }
+  /* Ouverture de la barre */
+  .side-nav.open {
+    width: 250px;
+  }
+
+  p {
+    font-size: 16px;
+  }
+
+  .perso-title,
+  .a-propos-title {
+    font-size: 30px;
+    margin-top: 50px;
+  }
+
+  .title,
+  .perso-subtitle,
+  .title-form,
+  .a-propos-description {
+    font-size: 20px;
+  }
+
+  .text,
+  .perso-class {
+    font-size: 16px;
+  }
+
+  .logo {
+    width: max-content;
+    height: 345px;
+  }
+
+  /*Introduction*/
+  .Introduction {
+    margin-bottom: 50px;
+  }
+
+  /*présentation*/
+  .profile-picture {
+    width: 150px;
+    height: auto;
+  }
+
+  /*contact + logo */
+
+  .contact-box {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .contact-right {
+    align-items: center;
+    width: auto;
+  }
+
+  .logo2 {
+    width: 150px;
+    height: 150px;
+  }
+
+  .form-group {
+    margin-bottom: 10px;
+    width: max-content;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    width: 100%; /* largeur des champs formulaire*/
+    padding: 10px;
+  }
+
+  .send-button,
+  .download-button {
+    width: 100px;
+    height: 50px;
+  }
+  .footer {
+    margin-top: 30px;
+  }
+  .footer-contact {
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  .footer-about,
+  .footer-social,
+  .footer-contact {
+    margin-bottom: 20px;
+  }
+
+  .footer-social img {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+/*Page Projet*/
+#titre-principale {
+  margin-top: 200px;
+  margin-bottom: 50px;
+}
+
+.titre-projet {
+  font-family: "Comfortaa", sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  color: #fff;
+}
+
+/*liens heroku et github*/
+.gold-link {
+  color: gold;
+  text-decoration: none;
+}
+
+.gold-link:hover {
+  color: darkgoldenrod;
+  text-decoration: underline;
+}
+#Projet1 {
+  border-top: 10px solid #f1c40f;
+  border-left: 20px solid #f1c40f;
+  margin-bottom: 100px;
+  padding: 20px;
+}
+
+.arcadialogo {
+  width: fit-content;
+  height: 300px;
+}
+
+.blogAuto,
+.nurse {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+#Projet3 {
+  border-bottom: 10px solid #f1c40f;
+  border-right: 20px solid #f1c40f;
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+
+#Projet1,
+#Projet2,
+#Projet3 {
+  transition: box-shadow 1s;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+#Projet1:hover,
+#Projet2:hover,
+#Projet3:hover {
+  box-shadow: 0 0 100px rgba(241, 196, 15, 0.7);
+}
+
+/*.....................page admin.............................*/
+/* ...............Styles pour le titre...................... */
+.titre-message {
+  color: #f1c40f;
+  text-align: center;
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+
+/*...............Styles pour la table...................... */
+table {
+  border-collapse: collapse;
+  width: 80%;
+  max-width: 800px;
+  margin: 0 auto;
+  border: 5px solid #f1c40f;
+}
+
+th,
+td {
+  border: 1px solid #f1c40f;
+  padding: 10px;
+  text-align: center;
+}
+
+th {
+  background-color: #f1c40f;
+  color: white;
+}
+
+td {
+  color: #f1c40f;
+}
