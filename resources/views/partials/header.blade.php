@@ -1,18 +1,8 @@
 <header class="header-3d">
   <nav class="navbar navbar-expand custom-navbar">
-    <a class="navbar-brand admin" href="#">
+    <a class="navbar-brand admin" href="{{ route('home') }}">
       <img src="{{ asset('images/maison.png') }}" alt="Logo" class="custom-logo" />
     </a>
-
-    <div class="login-form">
-      <form action="{{ route('login') }}" method="POST">
-        @csrf
-        <button type="button" class="close-btn">X</button>
-        <input type="text" name="username" placeholder="Nom d'utilisateur">
-        <input type="password" name="password" placeholder="Mot de passe">
-        <button type="submit">Se connecter</button>
-      </form>
-    </div>
 
     <ul class="navbar-nav ml-auto custom-link">
       <li class="nav-item">

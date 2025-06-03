@@ -14,28 +14,28 @@
 
       <!-- Section réseaux sociaux -->
       <div class="col-md-4 text-center footer-social">
-        <div class="row d-flex justify-content-center">
-          <div class="col social-icon">
+        <div class="d-flex flex-wrap justify-content-center gap-2">
+          <div class="social-icon">
             <a href="https://www.facebook.com/oves.moh" target="_blank">
               <img src="{{ asset('images/facebook.png') }}" alt="Facebook Logo" />
             </a>
           </div>
-          <div class="col social-icon">
+          <div class="social-icon">
             <a href="https://www.instagram.com/ovismo786/" target="_blank">
               <img src="{{ asset('images/instagram.png') }}" alt="Instagram Logo" />
             </a>
           </div>
-          <div class="col social-icon">
+          <div class="social-icon">
             <a href="https://www.linkedin.com/in/aowis-mohammad-45763328a/" target="_blank">
               <img src="{{ asset('images/linkedin.png') }}" alt="LinkedIn Logo" />
             </a>
           </div>
-          <div class="col social-icon">
+          <div class="social-icon">
             <a href="https://twitter.com/oviss02" target="_blank">
               <img src="{{ asset('images/twitter.png') }}" alt="Twitter Logo" />
             </a>
           </div>
-          <div class="col social-icon">
+          <div class="social-icon">
             <a href="https://github.com/ovis02" target="_blank">
               <img src="{{ asset('images/github.png') }}" alt="GitHub Logo" />
             </a>
