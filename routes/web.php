@@ -17,6 +17,9 @@ use Inertia\Inertia;
 // Page d'accueil via un contrôleur propre
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
+Route::get('/projets', [HomeController::class, 'projets'])->name('projets');
+
+Route::get('/apropos', [HomeController::class, 'apropos'])->name('apropos');
 
 // ──────────────────────────────────────────────
 //  Authentification & Inertia.js (décommenter si utilisé)

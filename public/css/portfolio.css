@@ -1,10 +1,21 @@
-body {
+body,
+html {
     cursor:
-        url('images/mouse.png') 0 0,
+        url('../images/mouse.png') 0 0,
         auto;
     background-color: #3867d6;
     margin: 0;
     padding: 0;
+}
+
+/* Style de fond par défaut homepage*/
+body.home {
+    background-color: #3867d6;
+}
+
+/* Page projets → pas de fond sur body */
+body.projets {
+    background-color: transparent;
 }
 
 #canvas {
@@ -40,6 +51,20 @@ p {
     width: 100%;
     top: 0;
     z-index: 2; /* Doit être supérieur à l'effet 3D */
+}
+
+.navbar-nav .nav-link {
+    color: white;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #ffd700;
+}
+
+.active-link {
+    color: #ffd700;
+    border-bottom: 2px solid #ffd700;
+    font-weight: bold;
 }
 
 .custom-logo {
@@ -384,6 +409,13 @@ label {
     font-family: 'Open Sans', sans-serif;
 }
 
+/*condition footer page projet*/
+.no-footer-bg {
+    background: none !important;
+    box-shadow: none !important;
+    border: none !important;
+}
+
 .footer h3 {
     color: #f1c40f;
     margin-bottom: 15px;
@@ -490,7 +522,7 @@ label {
     background: radial-gradient(circle, #3867d6, #553adf);
     animation: gradientAnimation 10s ease-in-out infinite;
     background-size: 200% 200%;
-    z-index: -5; /* Pour s'assurer qu'il reste derrière le contenu */
+    z-index: -5;
 }
 
 /* Animation for the gradient */
@@ -557,7 +589,7 @@ label {
 
 @media (max-width: 768px) {
     body {
-        cursor: url('images/mouse_mobile.png'), auto;
+        cursor: url('../images/mouse_mobile.png'), auto;
 
         /* Masquer la barre de navigation classique */
     }

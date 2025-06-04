@@ -6,17 +6,19 @@
 
     <ul class="navbar-nav ml-auto custom-link">
       <li class="nav-item">
-        <a class="nav-link perso-class" href="{{ route('home') }}">Accueil</a>
+      <a class="nav-link perso-class {{ Route::is('home') ? 'active-link' : '' }}" href="{{ route('home') }}">Accueil</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link perso-class" href="{{ route('projets') }}">Projets</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link perso-class" href="{{ route('apropos') }}">À propos</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link perso-class" href="{{ route('contact') }}">Contact</a>
-      </li>
+      <a class="nav-link perso-class {{ Route::is('projets') ? 'active-link' : '' }}" href="{{ route('projets') }}">Projets</a>
+  </li>
+  <li class="nav-item">
+  <a class="nav-link perso-class {{ Route::is('apropos') ? 'text-gold' : '' }}" href="{{ route('apropos') }}">
+    À propos
+</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link perso-class" href="#">Contact</a>
+  </li>
     </ul>
 
     <a class="burger-menu">
@@ -28,9 +30,15 @@
     <a href="#" class="close-btn" id="close-btn">&times;</a>
     <ul>
       <li><a href="{{ route('home') }}">Accueil</a></li>
-      <li><a href="{{ route('projets') }}">Projets</a></li>
-      <li><a href="{{ route('apropos') }}">À propos</a></li>
-      <li><a href="{{ route('contact') }}">Contact</a></li>
+      <li class="nav-item">
+    <a class="nav-link perso-class" href="#">Projets</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link perso-class" href="#">À propos</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link perso-class" href="#">Contact</a>
+  </li>
     </ul>
   </div>
 </header>

@@ -1,17 +1,18 @@
 <!-- Footer -->
-<footer class="footer">
+<footer class="footer {{ $removeFooterBg ? 'no-footer-bg' : '' }}">
   <div class="container">
     <!-- Section principale du footer -->
     <div class="footer-content row d-flex justify-content-between align-items-center">
       
       <!-- Section à propos -->
       <div class="col-md-4 footer-about">
-        <h3><a href="{{ route('apropos') }}">À propos de moi</a></h3>
+      
+      {{-- À modifier plus tard quand la route 'apropos' sera créée --}}
+<h3><a href="#">À propos de moi</a></h3>
         <p>
           Développeur passionné par la création d'expériences web modernes et performantes. Mon portfolio reflète mon expertise dans le design et le développement front-end.
         </p>
       </div>
-
       <!-- Section réseaux sociaux -->
       <div class="col-md-4 text-center footer-social">
         <div class="d-flex flex-wrap justify-content-center gap-2">

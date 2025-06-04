@@ -48,7 +48,8 @@
     <link rel="stylesheet" href="{{ asset('css/portfolio.css') }}">
   </head>
 
-  <body class="font-sans antialiased">
+  <body class="font-sans antialiased {{ Route::currentRouteName() }}">
+
     {{-- Header --}}
     @include('partials.header')
 
@@ -56,7 +57,9 @@
     @yield('content')
 
     {{-- Footer --}}
-    @include('partials.footer')
+    {{-- @include('partials.footer')--}}
+    @include('partials.footer', ['removeFooterBg' => $removeFooterBg ?? false])
+
 
     {{-- jQuery + ton JS --}}
     <script 
