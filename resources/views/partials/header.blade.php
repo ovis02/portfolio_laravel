@@ -17,7 +17,9 @@
 </a>
   </li>
   <li class="nav-item">
-    <a class="nav-link perso-class" href="#">Contact</a>
+  <a class="nav-link perso-class {{ Route::is('contact') ? 'active-link' : '' }}" href="{{ route('contact') }}">
+    Contact
+</a>
   </li>
     </ul>
 
@@ -29,16 +31,26 @@
   <div class="side-nav" id="side-nav">
     <a href="#" class="close-btn" id="close-btn">&times;</a>
     <ul>
-      <li><a href="{{ route('home') }}">Accueil</a></li>
-      <li class="nav-item">
-    <a class="nav-link perso-class" href="#">Projets</a>
+  <li class="nav-item">
+    <a class="nav-link perso-class {{ Route::is('home') ? 'active-link' : '' }}" href="{{ route('home') }}">
+      Accueil
+    </a>
   </li>
   <li class="nav-item">
-    <a class="nav-link perso-class" href="#">À propos</a>
+    <a class="nav-link perso-class {{ Route::is('projets') ? 'active-link' : '' }}" href="{{ route('projets') }}">
+      Projets
+    </a>
   </li>
   <li class="nav-item">
-    <a class="nav-link perso-class" href="#">Contact</a>
+    <a class="nav-link perso-class {{ Route::is('apropos') ? 'active-link' : '' }}" href="{{ route('apropos') }}">
+      À propos
+    </a>
   </li>
-    </ul>
+  <li class="nav-item">
+    <a class="nav-link perso-class {{ Route::is('contact') ? 'active-link' : '' }}" href="{{ route('contact') }}">
+      Contact
+    </a>
+  </li>
+</ul>
   </div>
 </header>

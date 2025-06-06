@@ -17,7 +17,7 @@
                         de la transformation numérique. Créatif et déterminé, je m'engage à concevoir des solutions
                         web efficaces et élégantes.
                     </p>
-                    <a href="{{ asset('cv/Aowis_MOHAMMAD_cv_studi.pdf') }}" target="_blank" class="futuristic-link">
+                    <a href="{{ asset('cv/Aowis_MOHAMMAD_cv_2025.pdf') }}" target="_blank" class="futuristic-link">
                         Mon CV
                     </a>
                 </div>

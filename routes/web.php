@@ -21,6 +21,8 @@ Route::get('/projets', [HomeController::class, 'projets'])->name('projets');
 
 Route::get('/apropos', [HomeController::class, 'apropos'])->name('apropos');
 
+Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
+
 // ──────────────────────────────────────────────
 //  Authentification & Inertia.js (décommenter si utilisé)
 // ──────────────────────────────────────────────

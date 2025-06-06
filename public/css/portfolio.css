@@ -14,7 +14,8 @@ body.home {
 }
 
 /* Page projets → pas de fond sur body */
-body.projets {
+body.projets,
+body.contact {
     background-color: transparent;
 }
 
