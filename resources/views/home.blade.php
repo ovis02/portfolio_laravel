@@ -35,7 +35,7 @@
             <div class="row">
                 <div class="col-md-7">
                     <div class="content2">
-                        <h2 class="title">1. Qui suis-je ?</h2>
+                        <h2 class="title">Qui suis-je ?</h2>
                         <p class="text">
                             Je suis une personne récemment convertie au développement web. Passionné par l'aspect artistique du métier et doté d'une
                             grande imagination...

@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Foundation\Application;
 use Inertia\Inertia;
@@ -22,6 +23,8 @@ Route::get('/projets', [HomeController::class, 'projets'])->name('projets');
 Route::get('/apropos', [HomeController::class, 'apropos'])->name('apropos');
 
 Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
+
+Route::post('/contact', [ContactController::class, 'store'])->name('contact.store');
 
 // ──────────────────────────────────────────────
 //  Authentification & Inertia.js (décommenter si utilisé)

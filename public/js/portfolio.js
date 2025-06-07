@@ -1,28 +1,3 @@
-// confirmation de maniere asyncrone
-
-$(document).ready(function () {
-    $('#myForm').submit(function (event) {
-        event.preventDefault(); // Empêche la soumission classique du formulaire
-
-        // Récupère des données du formulaire
-        var formData = $(this).serialize();
-
-        // Requête AJAX
-        $.ajax({
-            type: 'POST',
-            url: 'formulaire.php',
-            data: formData,
-            success: function (response) {
-                // met à jour la section dans l'id de confirmation
-                $('#confirmation').html(response);
-            },
-            error: function () {
-                $('#confirmation').html("Une erreur est survenue lors de l'envoi du formulaire.");
-            },
-        });
-    });
-});
-
 //burger navigation
 document.getElementById('burger-menu').addEventListener('click', function () {
     document.getElementById('side-nav').classList.add('open');
@@ -95,4 +70,49 @@ window.addEventListener('mousemove', (e) => {
 window.addEventListener('resize', () => {
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
+});
+
+//asynchrone message succès
+document.addEventListener('DOMContentLoaded', function () {
+    const form = document.getElementById('contact-form');
+    const successMsg = document.getElementById('success-message');
+
+    form.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        // Reset previous errors
+        ['nom', 'email', 'message'].forEach((id) => {
+            const errorEl = document.getElementById('error-' + id);
+            if (errorEl) errorEl.textContent = '';
+        });
+        successMsg.classList.add('d-none');
+
+        const formData = new FormData(form);
+
+        fetch(form.action, {
+            method: 'POST',
+            headers: {
+                'X-CSRF-TOKEN': document.querySelector('input[name="_token"]').value,
+                Accept: 'application/json',
+            },
+            body: formData,
+        })
+            .then((response) => {
+                if (!response.ok) return response.json().then((err) => Promise.reject(err));
+                return response.json();
+            })
+            .then((data) => {
+                form.reset();
+                successMsg.classList.remove('d-none');
+                successMsg.textContent = data.message;
+            })
+            .catch((error) => {
+                if (error.errors) {
+                    for (let field in error.errors) {
+                        const errorEl = document.getElementById(`error-${field}`);
+                        if (errorEl) errorEl.textContent = error.errors[field][0];
+                    }
+                }
+            });
+    });
 });
