@@ -217,6 +217,7 @@ p {
 .contact-box:hover {
     box-shadow: 0 0 100px rgba(241, 196, 15, 0.7);
 }
+
 /*.......................................*/
 .Introduction,
 .Main,
@@ -311,6 +312,7 @@ p {
 }
 
 /*Page Contact*/
+/* --- TITRE DE SECTION --- */
 .title-form {
     font-size: 48px;
     color: #f1c40f;
@@ -318,98 +320,83 @@ p {
     margin-bottom: 40px;
     text-align: center;
     letter-spacing: 2px;
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4); /* Effet de profondeur */
-    font-family: 'Lexend Mega', sans-serif; /* Assure une bonne harmonie */
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
+    font-family: 'Lexend Mega', sans-serif;
 }
 
+/* --- SECTION PRINCIPALE --- */
 .Contact {
     display: flex;
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    text-align: center;
     padding: 80px 20px;
+    background: transparent;
 }
 
+/* --- CONTAINER DE CONTACT --- */
 .contact-box {
     display: flex;
-    justify-content: space-between;
+    flex-direction: row;
     align-items: center;
+    justify-content: space-between;
     border: 5px solid #f1c40f;
-    border-radius: 5px;
+    border-radius: 8px;
     padding: 40px;
     max-width: 1000px;
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.05); /* Optionnel : légère transparence */
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Optionnel */
+    background-color: rgba(0, 0, 0, 0.05);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
 }
 
-.contact-right {
-    width: 60%;
+.Contact {
+    padding: 60px 15px;
 }
 
-.form-group {
-    margin-bottom: 20px;
+.contact-box {
+    background-color: rgba(0, 0, 0, 0.05);
+    border: 5px solid #f1c40f;
+    border-radius: 8px;
+    padding: 40px 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
 }
 
-form input,
-form textarea {
+.logo2 {
     width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    max-width: 350px;
+    height: auto;
+}
+
+.title-form {
+    font-size: 36px;
+    color: #f1c40f;
+    font-weight: bold;
+    margin-bottom: 30px;
+    text-align: center;
+    font-family: 'Lexend Mega', sans-serif;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
 }
 
 label {
     color: #f1c40f;
-    display: block;
-    text-align: left;
-    margin-bottom: 5px;
     font-weight: 600;
     font-family: 'Comfortaa', sans-serif;
 }
 
 .send-button {
-    width: 200px;
-    height: 60px;
-    margin: 10px;
-    background-color: #f1c40f; /* Couleur de base */
+    height: 50px;
+    background-color: #f1c40f;
+    color: white;
     border: none;
-    border-radius: 10px; /* Coins plus arrondis */
-    color: #fff;
-    cursor: pointer;
-    position: relative; /* Nécessaire pour l'effet */
-    overflow: hidden; /* Évite que l'ombre déborde */
-    transition:
-        transform 0.3s ease,
-        box-shadow 0.3s ease; /* Transition fluide */
+    border-radius: 8px;
+    transition: all 0.3s ease;
 }
 
-.send-button::before,
-.download-button::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 300%;
-    height: 300%;
-    background: rgba(255, 255, 255, 0.2);
-    border-radius: 50%;
-    transition: transform 0.4s ease;
-    z-index: 0; /* Positionné derrière le texte */
-    transform: translate(-50%, -50%) scale(0); /* Initialement invisible */
+.send-button:hover {
+    background-color: #d4ac0d;
+    transform: scale(1.02);
 }
 
-.send-button:hover::before,
-.download-button:hover::before {
-    transform: translate(-50%, -50%) scale(1); /* Apparition au survol */
-}
-
-.send-button:hover,
-.download-button:hover {
-    transform: scale(1.05); /* Légère augmentation de taille au survol */
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* Ombre portée plus forte */
-}
 /* Footer Styling */
 .footer {
     background: linear-gradient(to bottom, rgba(56, 103, 214, 1), rgba(85, 58, 223, 0.8));
@@ -699,23 +686,17 @@ label {
 
     .contact-box {
         flex-direction: column;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .contact-right {
-        align-items: center;
-        width: auto;
+        padding: 30px 15px;
+        padding-bottom: 40px;
     }
 
     .logo2 {
-        width: 150px;
-        height: 150px;
+        max-width: 200px;
+        margin-bottom: 20px;
     }
 
     .form-group {
-        margin-bottom: 10px;
-        width: max-content;
+        width: 100%;
     }
 
     .form-group input,

@@ -8,43 +8,41 @@
 <!-- Contact -->
 <section class="Contact">
   <div class="container">
-
-    <div id="success-message" class="alert alert-success d-none text-center">
-      Message envoyé avec succès !
-    </div>
-
-    <div class="contact-box">
-      <div class="contact-left">
-        <img src="{{ asset('images/logo.png') }}" alt="Votre Logo" class="logo2" />
-      </div>
-
-      <div class="contact-right">
-        <!-- Titre déplacé ici pour un meilleur alignement -->
-        <h2 class="title-form">Contact</h2>
-
-        <form id="contact-form" method="POST" action="{{ route('contact.store') }}">
-          @csrf
-
-          <div class="form-group">
-            <label for="nom">Nom</label>
-            <input type="text" id="nom" name="nom" placeholder="Entrez votre nom" />
-            <div class="error text-danger" id="error-nom"></div>
+    <div class="row justify-content-center">
+      <div class="col-lg-10">
+        <div class="contact-box row">
+          
+          <!-- Logo -->
+          <div class="col-md-5 d-flex justify-content-center align-items-center mb-4 mb-md-0">
+            <img src="{{ asset('images/logo.png') }}" alt="Votre Logo" class="logo2 img-fluid" />
           </div>
 
-          <div class="form-group">
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" placeholder="Entrez votre adresse email" />
-            <div class="error text-danger" id="error-email"></div>
+          <!-- Formulaire -->
+          <div class="col-md-7">
+            <h2 class="title-form">Contact</h2>
+            <form method="POST" action="{{ route('contact.store') }}">
+              @csrf
+
+              <div class="form-group mb-3">
+                <label for="nom">Nom</label>
+                <input type="text" class="form-control" id="nom" name="nom" placeholder="Entrez votre nom">
+              </div>
+
+              <div class="form-group mb-3">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" id="email" name="email" placeholder="Entrez votre adresse email">
+              </div>
+
+              <div class="form-group mb-3">
+                <label for="message">Message</label>
+                <textarea class="form-control" id="message" name="message" rows="5" placeholder="Saisissez votre message ici"></textarea>
+              </div>
+
+              <button type="submit" class="send-button w-100">Envoyer</button>
+            </form>
           </div>
 
-          <div class="form-group">
-            <label for="message">Message</label>
-            <textarea id="message" name="message" placeholder="Saisissez votre message ici" style="height: 200px"></textarea>
-            <div class="error text-danger" id="error-message"></div>
-          </div>
-
-          <button class="send-button" type="submit">Envoyer</button>
-        </form>
+        </div>
       </div>
     </div>
   </div>
