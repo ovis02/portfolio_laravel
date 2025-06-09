@@ -45,7 +45,7 @@
     />
 
     {{-- Ton CSS personnalisé --}}
-    <link rel="stylesheet" href="{{ asset('css/portfolio.css') }}">
+    <link rel="stylesheet" href="{{ secure_asset('css/portfolio.css') }}">
   </head>
 
   <body class="font-sans antialiased {{ Route::currentRouteName() }}">
@@ -67,6 +67,6 @@
       integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" 
       crossorigin="anonymous"
     ></script>
-    <script src="{{ asset('js/portfolio.js') }}"></script>
+    <script src="{{ secure_asset('js/portfolio.js') }}"></script>
   </body>
 </html>
