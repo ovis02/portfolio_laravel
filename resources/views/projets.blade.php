@@ -4,10 +4,10 @@
 
     <canvas id="canvas"></canvas>
     <div class="background"></div>
-
+<div class="projet-global">
 <!-- Titre principal -->
 <div class="container text-center mb-3">
-    <h1 class="title" id="titre-principale">2. Mes projets</h1>
+    <h1 class="title" id="titre-principale">Mes projets</h1>
 </div>
 
 <!-- Projet 1 : EcoRide -->
@@ -25,9 +25,10 @@
                     <img src="https://img.shields.io/badge/-Symfony-000000?logo=symfony&logoColor=white" alt="Symfony" />
                     <img src="https://img.shields.io/badge/-MongoDB-47A248?logo=mongodb&logoColor=white" alt="MongoDB" />
                     <img src="https://img.shields.io/badge/-MySQL-4479A1?logo=mysql&logoColor=white" alt="MySQL" />
-                    <p class="mt-4">
-                        <a href="https://github.com/ovis02/EcoRide" target="_blank" class="gold-link">Voir le code</a>
-                    </p>
+                    <p class="mt-4 d-flex gap-3">
+    <a href="https://github.com/ovis02/EcoRide" target="_blank" class="btn-demo">Code source</a>
+    <a href="https://ecoride02-edbedfe97bbc.herokuapp.com/" target="_blank" class="btn-demo">Voir la démo</a>
+</p>
                 </div>
             </div>
             <div class="col-md-5">
@@ -84,4 +85,5 @@
         </div>
     </div>
 </section>
+</div>
 @endsection

@@ -7,7 +7,7 @@
     {{-- Titre --}}
     <title>{{ config('app.name', 'Portfolio') }}</title>
 
-    {{-- Couleur de fond clair/sombre --}}
+    {{-- Couleur de fond clair/sombre 
     <script>
       (function () {
         const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
@@ -24,6 +24,7 @@
         background-color: oklch(0.145 0 0);
       }
     </style>
+    --}}
 
     {{-- Favicons --}}
     <link rel="icon" href="/favicon.ico" sizes="any">
@@ -45,7 +46,7 @@
     />
 
     {{-- Ton CSS personnalisé --}}
-    <link rel="stylesheet" href="{{ secure_asset('css/portfolio.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/portfolio.css') }}">
   </head>
 
   <body class="font-sans antialiased {{ Route::currentRouteName() }}">
@@ -67,6 +68,6 @@
       integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" 
       crossorigin="anonymous"
     ></script>
-    <script src="{{ secure_asset('js/portfolio.js') }}"></script>
+    <script src="{{ asset('js/portfolio.js') }}"></script>
   </body>
 </html>

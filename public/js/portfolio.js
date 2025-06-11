@@ -7,7 +7,7 @@ document.getElementById('close-btn').addEventListener('click', function () {
     document.getElementById('side-nav').classList.remove('open');
 });
 
-//canvas
+// canvas
 
 const canvas = document.getElementById('canvas');
 const context = canvas.getContext('2d');
@@ -43,7 +43,6 @@ class Particle {
 
 function createParticles(x, y) {
     for (let i = 0; i < 3; i++) {
-        // Moins de particules à chaque mouvement pour un effet léger
         particles.push(new Particle(x, y));
     }
 }
@@ -61,10 +60,27 @@ function animate() {
     requestAnimationFrame(animate);
 }
 
+// particules au demarrage
+for (let i = 0; i < 50; i++) {
+    createParticles(Math.random() * canvas.width, Math.random() * canvas.height);
+}
+
 animate();
 
+// pour format bureau
 window.addEventListener('mousemove', (e) => {
     createParticles(e.x, e.y);
+});
+
+// pour mobile
+window.addEventListener('touchstart', (e) => {
+    const touch = e.touches[0];
+    createParticles(touch.clientX, touch.clientY);
+});
+
+window.addEventListener('touchmove', (e) => {
+    const touch = e.touches[0];
+    createParticles(touch.clientX, touch.clientY);
 });
 
 window.addEventListener('resize', () => {

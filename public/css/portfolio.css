@@ -260,6 +260,7 @@ p {
     display: flex;
     justify-content: center;
     padding: 20px;
+    z-index: 5;
 }
 
 .logo {
@@ -395,6 +396,71 @@ label {
 .send-button:hover {
     background-color: #d4ac0d;
     transform: scale(1.02);
+}
+
+/*Page Projet*/
+#titre-principale {
+    margin-top: 150px;
+    margin-bottom: 50px;
+}
+
+.titre-projet {
+    font-family: 'Comfortaa', sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    color: #fff;
+}
+
+/*liens heroku et github*/
+.gold-link {
+    color: gold;
+    text-decoration: none;
+}
+
+.gold-link:hover {
+    color: darkgoldenrod;
+    text-decoration: underline;
+}
+#Projet1 {
+    border-top: 10px solid #f1c40f;
+    border-left: 20px solid #f1c40f;
+    margin-bottom: 100px;
+    padding: 20px;
+}
+
+#Projet3 {
+    border-bottom: 10px solid #f1c40f;
+    border-right: 20px solid #f1c40f;
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+#Projet1,
+#Projet2,
+#Projet3 {
+    transition: box-shadow 1s;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+#Projet1:hover,
+#Projet2:hover,
+#Projet3:hover {
+    box-shadow: 0 0 100px rgba(241, 196, 15, 0.7);
+}
+
+.btn-demo {
+    color: white;
+    background: linear-gradient(to right, #f1c40f, #ff9900);
+    padding: 10px 20px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    box-shadow: 0 0 15px rgba(255, 204, 0, 0.4);
+    transition: transform 0.2s;
+}
+.btn-demo:hover {
+    transform: scale(1.05);
 }
 
 /* Footer Styling */
@@ -670,7 +736,51 @@ label {
         width: max-content;
         height: 345px;
     }
+    /*projet*/
+    #titre-principale {
+        margin-bottom: 30px;
+        font-size: 24px;
+        text-align: center;
+    }
 
+    .titre-projet {
+        font-size: 18px;
+        color: #fff;
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .text {
+        font-size: 16px;
+        line-height: 1.5;
+        text-align: justify;
+    }
+
+    #Projet1,
+    #Projet2,
+    #Projet3 {
+        padding: 15px;
+        border-radius: 10px;
+        margin-bottom: 40px;
+        background-color: rgba(0, 0, 0, 0.03);
+        transition: box-shadow 1s;
+    }
+
+    #Projet1:hover,
+    #Projet2:hover,
+    #Projet3:hover {
+        box-shadow: 0 0 30px rgba(241, 196, 15, 0.5);
+    }
+    .projet-global {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .logo-container img {
+        width: 100%;
+        max-width: 300px;
+        margin: 20px auto;
+        display: block;
+    }
     /*Introduction*/
     .Introduction {
         margin-bottom: 50px;
@@ -685,9 +795,9 @@ label {
     /*contact + logo */
 
     .contact-box {
-        flex-direction: column;
-        padding: 30px 15px;
-        padding-bottom: 40px;
+        margin: 40px auto 20px auto !important;
+        width: 90% !important;
+        padding: 20px 15px !important;
     }
 
     .logo2 {
@@ -740,70 +850,6 @@ label {
         width: 30px;
         height: 30px;
     }
-}
-
-/*Page Projet*/
-#titre-principale {
-    margin-top: 200px;
-    margin-bottom: 50px;
-}
-
-.titre-projet {
-    font-family: 'Comfortaa', sans-serif;
-    font-size: 20px;
-    font-weight: bold;
-    color: #fff;
-}
-
-/*liens heroku et github*/
-.gold-link {
-    color: gold;
-    text-decoration: none;
-}
-
-.gold-link:hover {
-    color: darkgoldenrod;
-    text-decoration: underline;
-}
-#Projet1 {
-    border-top: 10px solid #f1c40f;
-    border-left: 20px solid #f1c40f;
-    margin-bottom: 100px;
-    padding: 20px;
-}
-
-.arcadialogo {
-    width: fit-content;
-    height: 300px;
-}
-
-.blogAuto,
-.nurse {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin: 0 auto;
-}
-
-#Projet3 {
-    border-bottom: 10px solid #f1c40f;
-    border-right: 20px solid #f1c40f;
-    margin-top: 100px;
-    margin-bottom: 100px;
-}
-
-#Projet1,
-#Projet2,
-#Projet3 {
-    transition: box-shadow 1s;
-    padding: 20px;
-    border-radius: 5px;
-}
-
-#Projet1:hover,
-#Projet2:hover,
-#Projet3:hover {
-    box-shadow: 0 0 100px rgba(241, 196, 15, 0.7);
 }
 
 /*.....................page admin.............................*/
