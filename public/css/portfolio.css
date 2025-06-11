@@ -655,7 +655,7 @@ label {
     body {
         cursor: url('../images/mouse_mobile.png'), auto;
 
-        /* Masquer la barre de navigation classique */
+        /* Masquer la barre de navigation  */
     }
     .custom-link {
         display: none;
