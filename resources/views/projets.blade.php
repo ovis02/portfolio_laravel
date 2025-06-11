@@ -33,7 +33,7 @@
             </div>
             <div class="col-md-5">
                 <div class="logo-container">
-                    <img src="{{ asset('images/ecoride.png') }}" alt="Logo EcoRide" class="img-fluid" />
+                    <img src="{{ asset('images/eco.png') }}" alt="Logo ecoride" class="img-fluid" />
                 </div>
             </div>
         </div>
